@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practice.ViewController">
+   <children>
+      <TabPane layoutY="26.0" prefHeight="562.0" prefWidth="944.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Доходи/витрати">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="298.0" prefWidth="339.0">
+                     <children>
+                        <Label text="Категорії витрати / доходів" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tableCat" prefHeight="300.0" prefWidth="600.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="140.0">
+                          <columns>
+                            <TableColumn fx:id="idColumnCat" prefWidth="75.0" text="#" />
+                            <TableColumn fx:id="nameColumnCat" prefWidth="125.33329010009766" text="Назва" />
+                              <TableColumn fx:id="descriptionColumnCat" prefWidth="299.73338317871094" text="Опис" />
+                          </columns>
+                        </TableView>
+                        <AnchorPane layoutX="695.0" layoutY="197.0" prefHeight="175.0" prefWidth="130.0" style="-fx-background-color: #ebe8e8;">
+                           <children>
+                              <Label layoutX="34.0" layoutY="27.0" text="Управління" />
+                              <Button fx:id="editButtonCat" alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" layoutY="82.0" mnemonicParsing="false" onAction="#clickEditButtonCat" text="Редагувати" />
+                              <Button fx:id="deleteButtonCat" layoutX="34.0" layoutY="128.0" mnemonicParsing="false" onAction="#clickDeleteButtonCat" text="Видалити" />
+                           </children>
+                        </AnchorPane>
+                        <TextField fx:id="searchField" prefHeight="26.0" prefWidth="255.0" promptText="Введіть перші літери назви категорії" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="100.0" />
+                        <Button fx:id="addButtonCat" layoutX="50.0" layoutY="470.0" mnemonicParsing="false" onAction="#clickAddButtonCat" text="Додати нову категорію" />
+                        <Button fx:id="refreshButtonCat" layoutX="540.0" layoutY="100.0" mnemonicParsing="false" onAction="#clickRefreshCat" text="Оновити" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Транзакції">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Транзакції" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="comboBox" layoutX="50.0" layoutY="99.0" prefHeight="26.0" prefWidth="192.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="100.0" />
+                        <TableView fx:id="tableTrans" layoutX="50.0" layoutY="146.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="140.0">
+                          <columns>
+                            <TableColumn fx:id="idTrans" prefWidth="36.79995346069336" text="#" />
+                            <TableColumn fx:id="catTrans" prefWidth="121.60000610351562" text="Категорія" />
+                              <TableColumn fx:id="typeTrans" prefWidth="139.2000274658203" text="Тип операції" />
+                              <TableColumn fx:id="costTrans" prefWidth="123.20001220703125" text="Сума" />
+                              <TableColumn fx:id="dateTrans" prefWidth="75.0" text="Дата" />
+                              <TableColumn fx:id="descTrans" prefWidth="112.0" text="Опис" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="addButtonTrans" layoutX="50.0" layoutY="470.0" mnemonicParsing="false" onAction="#clickAddButtonTrans" text="Додати нову транзакцію" />
+                        <Button fx:id="refreshButtonTrans" layoutX="540.0" layoutY="100.0" mnemonicParsing="false" onAction="#clickRefreshTrans" text="Оновити" />
+                        <Button fx:id="deleteButtonTrans" layoutX="701.0" layoutY="360.0" mnemonicParsing="false" onAction="#clickDeleteButtonTrans" text="Видалити" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
